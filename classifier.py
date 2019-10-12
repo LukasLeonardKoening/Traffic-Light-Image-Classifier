@@ -120,7 +120,6 @@ def get_brightness(rgb_image):
     feature = [0,0,0]
     
     masked_image = brightness_mask(rgb_image)
-    #show_channels(cropped_image)
     
     # Detect average brightness of 3 sectors
     hsv = cv2.cvtColor(masked_image, cv2.COLOR_RGB2HSV)
