@@ -133,7 +133,8 @@ def get_value(rgb_image):
     Function to create a value (hsv) feature
     """
     feature = [0,0,0]
-    hsv = cv2.cvtColor(rgb_image, cv2.COLOR_RGB2HSV)
+    masked_image = brightness_mask(rgb_image)
+    hsv = cv2.cvtColor(masked_image, cv2.COLOR_RGB2HSV)
     v = hsv[:,:,2]
 
     for i in range(len(rgb_image)):
